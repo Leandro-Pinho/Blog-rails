@@ -10,6 +10,9 @@ gem "rails", "~> 7.0.2", ">= 7.0.2.2"
 gem "sprockets-rails"
 
 # adicionar upload de arquivos
+
+gem 'mini_magick'
+
 gem 'carrierwave'
 
 gem 'net-ssh'

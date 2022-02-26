@@ -5,11 +5,15 @@
   <%= link_to "New idea", new_idea_path, class: "btn btn-default" %>
 </div>
 
-<br>
-<div class="caixas">
-  <% @ideas.each do |idea| %>
-    <div class="caixa">
-      <%= render idea %>
-    </div>
-  <% end %>
+
+<div class="container mt-2">
+  <div class="row">
+    <% @ideas.each do |idea| %>
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <%= render idea %>
+      </div> 
+    <% end %>
+  </div>
 </div>
+
+

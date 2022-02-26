@@ -1,6 +1,6 @@
-<div class="card" style="width: 15rem; ">
+<div class="card">
 
-  <%= image_tag idea.picture_url, width: '100%', height: '200' if idea.picture.present? %>
+  <%= image_tag idea.picture_url(:thumb) if idea.picture.present? %>
 
   <div class="card-body">
     <h5 class="card-title">
@@ -10,6 +10,8 @@
     <p class="card-text">
       <%= idea.description %>
     </p>
+
+    <%= link_to "View", idea_path(idea.id), class: 'btn btn-primary' %>
   </div>
 </div>
 
