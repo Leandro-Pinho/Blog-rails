@@ -17,6 +17,16 @@ gem 'carrierwave'
 
 gem 'net-ssh'
 
+gem 'devise'
+
+gem 'bootstrap-icons-helper', '~> 1.0', '>= 1.0.1'
+
+gem 'bootstrap-icons', '~> 1.0', '>= 1.0.11'
+
+gem 'jquery-rails'
+
+gem 'gravtastic'
+
 # Use sqlite3 as the database for Active Record
 
 group :development do

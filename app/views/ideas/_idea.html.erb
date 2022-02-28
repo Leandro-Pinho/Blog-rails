@@ -4,14 +4,13 @@
 
   <div class="card-body">
     <h5 class="card-title">
-      <%= idea.name %>
+      <%= link_to idea.name, idea_path(idea.id), class: 'text-dark' %> 
     </h5>
-
+    
     <p class="card-text">
-      <%= idea.description %>
+      <%= idea.description %> 
     </p>
 
-    <%= link_to "View", idea_path(idea.id), class: 'btn btn-primary' %>
   </div>
 </div>
 

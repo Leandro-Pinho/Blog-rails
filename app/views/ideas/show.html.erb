@@ -1,10 +1,9 @@
-<p style="color: green"><%= notice %></p>
 
 <div class="container">
   <div class="row">
     <div class="col-8" > 
       <%= render @idea %>
-
+     
       <% @comments.each do |comment| %>
         <div>
           <strong><%= comment.user_name %></strong>

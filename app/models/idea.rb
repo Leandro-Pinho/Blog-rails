@@ -1,4 +1,4 @@
-class Idea <* ApplicationRecord
+class Idea < ApplicationRecord
     mount_uploader :picture, PictureUploader 
     has_many :comments
     validates :name, presence: {message: 'deve ser preenchido'},
