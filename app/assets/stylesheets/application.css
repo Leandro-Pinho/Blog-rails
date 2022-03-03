@@ -60,7 +60,6 @@
   }
   
   .card-text {
-    max-width: 50ch;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -69,6 +68,10 @@
   .gravatar {
     height: 30px;
     width: auto;
+  }
+
+  .foto {
+    border-bottom-right-radius: 20px;
   }
 
   footer {

@@ -1,7 +1,6 @@
-<div class="card">
-
-  <%= image_tag idea.picture_url(:thumb) if idea.picture.present? %>
-
+  
+  <%= image_tag idea.picture_url(:thumb), :class => "foto" if idea.picture.present? %>
+  
   <div class="card-body">
     <h5 class="card-title">
       <%= link_to idea.name, idea_path(idea.id), class: 'text-dark' %> 
@@ -12,6 +11,4 @@
     </p>
 
   </div>
-</div>
 
-<br>

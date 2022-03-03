@@ -10,28 +10,30 @@ gem "rails", "~> 7.0.2", ">= 7.0.2.2"
 gem "sprockets-rails"
 
 # adicionar upload de arquivos
-
 gem 'mini_magick'
 
 gem 'carrierwave'
 
 gem 'net-ssh'
-
+# use para autenticação
 gem 'devise'
 
+gem 'cancancan'
+
+# use icons do bootstrap-icons
 gem 'bootstrap-icons-helper', '~> 1.0', '>= 1.0.1'
 
 gem 'bootstrap-icons', '~> 1.0', '>= 1.0.11'
 
 gem 'jquery-rails'
-
+# adicionar imagem de perfil
 gem 'gravtastic'
 
 # Use sqlite3 as the database for Active Record
-
 group :development do
   gem 'sqlite3'
 end
+
 group :production do
   gem 'pg'
 end
@@ -75,6 +77,7 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'rspec-rails', '~> 3.8'
 end
 
 group :development do
@@ -93,4 +96,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem 'shoulda-matchers'
 end
