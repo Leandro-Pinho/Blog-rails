@@ -11,6 +11,7 @@ class IdeasController < ApplicationController
   def show
     @comments = @idea.comments.all
     @comment = @idea.comments.build
+
   end
 
   # GET /ideas/new
@@ -56,7 +57,7 @@ class IdeasController < ApplicationController
     @idea.destroy
 
     respond_to do |format|
-      format.html { redirect_to ideas_url, notice: "Idea was successfully destroyed." }
+      format.html { redirect_to ideas_url(@idea), notice: "Idea was successfully destroyed." }
       format.json { head :no_content }
     end
   end

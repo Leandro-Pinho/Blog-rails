@@ -1,7 +1,6 @@
 class Idea < ApplicationRecord
     mount_uploader :picture, PictureUploader        # incluir imagem
-    has_many :comments        # incluir comentario
-
+    has_many :comments, dependent: :destroy        # incluir comentario
 
     # validação nome e descrição
     validates :name, presence: {message: 'deve ser preenchido'},

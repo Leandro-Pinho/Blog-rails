@@ -1,10 +1,10 @@
 
 <div class="container">
   <div class="row mt-5"> 
-    <div class="col-4">
+    <div class="col-lg-4 col-md-6">
       <%= image_tag @idea.picture_url(:thumb) if @idea.picture.present? %>
     </div>
-    <div class="card-body col-8">
+    <div class="card-body col-lg-8 col-md-6">
       <h5 class="card-title">
         <%= link_to @idea.name, idea_path(@idea.id), class: 'text-dark' %> 
       </h5>
@@ -14,39 +14,26 @@
       </p>
     </div>
   </div>
-
+   
+   
   <div class="mt-4">
     <!-- comentario -->
-      <% @comments.each do |comment| %>
-        <div>
-          <strong><%= comment.user_name %></strong><small class="text-muted">
-            há <%= time_ago_in_words(comment.created_at) %>
-          </small>
-          <p><%= comment.body %></p>
-          
-          <% if can? :update, @idea %>
-          <div class="row">
-            <li class="nav-link"><%= link_to "Edit", edit_comment_path(comment), :class => "btn btn-link" %></li>
-            <li class="nav-link"><%= button_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-link" %></li>
-          </div> 
-          <% end %>
-        </div>
-      <% end %>
+    <%= render @idea.comments %>
+  </div>  
+
+  <div class="mt-4">
+    <div class="col-6">
+    <!-- formulario para comentario -->
+    <%= render "ideas/comments", idea: @idea %>
     </div>
   </div>
-
-  <!-- formulario para comentario -->
-  <div class="jumbotron">
-    <h3>Comments</h3>
-    <%= render partial: 'comments/form', locals: { comment: @comment } %>
-  </div>
-
+  
   <!-- button para editar, voltar e deletar -->
   <ul class="row"> 
     <% if can? :update, @idea %>
       <li class="nav-link"><%= link_to "Edit", edit_idea_path(@idea), class:"btn btn-outline-info" %></li>
     <% end %>  
-    <li class="nav-link"><%= link_to "Back", ideas_path, class: "btn btn-outline-info" %></li>
+    <li class="nav-link"><%#= link_to "Back", ideas_path, class: "btn btn-outline-info" %></li>
    
     <% if can? :update, @idea %>
       <li class="nav-link"><%= button_to "Delete", @idea, method: :delete, class: "btn btn-danger" %></li>

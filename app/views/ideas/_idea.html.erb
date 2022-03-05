@@ -10,5 +10,11 @@
       <%= idea.description %> 
     </p>
 
+      <small class="text-muted"> Postado há <%= time_ago_in_words(idea.created_at) %></small>
+    
+    <p>
+    <strong><%= pluralize idea.comments.count, "comment" %></strong>
+    </p>
+
   </div>
 

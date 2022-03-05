@@ -1,0 +1,13 @@
+<%= form_with model: [ @idea, Comment.new ] do |f| %>
+   Your comment:<br>
+   <h5>
+     <%= f.text_field :name, class: "form-control", placeholder: "name"%>
+   </h5>
+
+   <div>
+     <%= f.text_area :content, class: "form-control", placeholder: "Seu comentário" %>
+   </div>
+   
+   <br>
+   <%= f.submit class: "btn btn-primary btn-lg btn-block"%>
+<% end %>
