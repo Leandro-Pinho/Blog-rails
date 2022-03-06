@@ -43,6 +43,6 @@ class IdeasControllerTest < ActionDispatch::IntegrationTest
       delete idea_url(@idea)
     end
 
-    assert_redirected_to ideas_url
+    assert_redirected_to ideas_url(@idea)
   end
 end
