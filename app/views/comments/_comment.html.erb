@@ -6,11 +6,12 @@
       </div>
    
       <div><%= comment.content %></div> 
-      <%#= button_to 'Delete', @comment, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-link" %>
-      <%= button_to 'Delete', [comment.idea, comment],
+      <% if can? :update, @comment %>
+         <%= button_to 'Delete', [comment.idea, comment],
                :confirm => 'Are you sure?',
                :method => :delete,
                :class => "btn btn-link" %>
+      <% end %>
    <% end %> 
 </div>
 

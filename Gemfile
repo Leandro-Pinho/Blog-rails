@@ -32,6 +32,8 @@ gem 'gravtastic'
 # Use sqlite3 as the database for Active Record
 group :development do
   gem 'sqlite3'
+  gem 'byebug'
+  #gem 'debugger' #debugar views
 end
 
 group :production do

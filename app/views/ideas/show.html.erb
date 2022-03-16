@@ -31,11 +31,8 @@
   <!-- button para editar, voltar e deletar -->
   <ul class="row"> 
     <% if can? :update, @idea %>
-      <li class="nav-link"><%= link_to "Edit", edit_idea_path(@idea), class:"btn btn-outline-info" %></li>
-    <% end %>  
-    <li class="nav-link"><%#= link_to "Back", ideas_path, class: "btn btn-outline-info" %></li>
-   
-    <% if can? :update, @idea %>
+      <li class="nav-link"><%= link_to "Edit", edit_idea_path(@idea), class:"btn btn-outline-info" %></li> 
+      <li class="nav-link"><%#= link_to "Back", ideas_path, class: "btn btn-outline-info" %></li>
       <li class="nav-link"><%= button_to "Delete", @idea, method: :delete, class: "btn btn-danger" %></li>
     <% end %>
   </ul>
